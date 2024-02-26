@@ -1,38 +1,231 @@
-.App {
-  text-align: center;
+@charset "utf-8";
+.App{
+    color: #fff;
+}
+/* 헤더 */
+.Header{
+    text-align: center;
+    height: 80px;
+    padding-top: 50px;
+    margin-bottom: 50px;
+}
+.Header .years{
+    margin-top: 30px;
+}
+.years button{
+    font-size: 18px;
+    color: rgb(255, 255, 255, 0.6);
+    margin-left: 16px;
+    margin-right: 16px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Header h2{
+    font-size: 28px;
+}
+.Header .years .active{
+    transition: 0.2s;
+}
+.Header .years .active:hover{
+    color: rgb(255, 255, 255);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* 헤더 끝 */
+.MovieList{
+    width: 1250px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.MovieItem{
+    position: relative;
+    width: 220px;
+    height: 450px;
+    margin-left: 12px;
+    margin-right: 12px;
+    margin-bottom: 30;
 }
-
-.App-link {
-  color: #61dafb;
+.mImg{
+    position: relative;
+    width: 230px;
+    height: 330px;
 }
+.mImg img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.mAge{
+    width: 25px;
+    height: auto;
+    margin-right: 8px;
+}
+.mAge img{
+    width: 100%;
+    height: auto;
+}
+.modalShowBtn{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: 0.3s;
+    opacity: 0;
+}
+.modalShowBtn:hover{
+    opacity: 1;
+}
+.modalShowBtn button{
+    position: absolute;
+    color: #fff;
+    font-size: 15px;
+    left: 19%;
+    top: 50%;
+    width: 64%;
+    height: 40px;
+    margin-top: -30px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+}
+/* 본문 아이템 텍스트 */
+.txtTop{
+    display: flex;
+    margin-top: 20px;
+}
+.txtTop .mTitle{
+    width: 100%;
+    font-size: 16px;
+    font-weight: 600;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.txtBottom{
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+.mTime , .mRating{
+    text-align: center;
+    line-height: 30px;
+    width: 47.2%;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 3px;
+    color: rgba(255, 255, 255, 0.8);
+}
+.mRating span{
+    color: #ff3300;
+}
+/* 본문 아이템 텍스트 끝 */
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* 모달 */
+.modal{
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 100;
+}
+.MovieItem .modal.show{
+    display: block;
+}
+.MovieModal{
+    position: relative;
+    width: 60%;
+    height: 70%;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 10%;
+    margin-bottom: 20%;
+    padding: 30px 50px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(20, 20, 20);
+    border-radius: 10px;
+}
+.modalImg{
+    width: 40%;
+    height: 100%;
+}
+.modalTxt{
+    width: 60%;
+    margin-top: 5px;
+    margin-left: 15px;
+}
+.modalImg img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.modaltxtTop{
+    align-items: center;
+    display: flex;
+    margin-bottom: 30px;
+}
+.modalTitle{
+    font-size: 30px;
+}
+.MovieModal .modalAge{
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+.modalAge img{
+    width: 100%;
+    height: 100%;
+}
+.modaltxtBottom{
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    margin-bottom: 50px;
+}
+.modalTime, .modalRating, .modalYear{
+    width: 33%;
+    line-height: 25px;
+    text-align: center;
+    margin-left: 5px;
+    margin-right: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.7);
+    border-radius: 3px;
+}
+.modalTime{
+    margin-left: 0;
+}
+.modaltxtInfo{
+    margin-bottom: 60px;
+}
+.modaltxtInfo p{
+    font-size: 15px;
+    line-height: 2em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.modalCloseBtn{
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    width: 30px;
+    height: 30px;
+}
+.modalCloseBtn button{
+    width: 100%;
+    height: 100%;
+    text-indent: -99999px;
+    background-image: url(img/close.svg);
+    background-size: 150%;
+    background-position: center;
+
 }
