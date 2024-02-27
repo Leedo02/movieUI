@@ -1,4 +1,5 @@
 import './App.css';
+import app from './firebase';
 import MovieList from './component/MovieList.js';
 
 import movie20_1 from './img/movie20_1.jpg';
