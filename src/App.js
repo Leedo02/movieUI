@@ -291,7 +291,7 @@ function App() {
       <h2>연도별 Movie List</h2>
       <div className='years'>
         <button
-          onClic={() => clickYearBtn('all')}
+          onClick={() => clickYearBtn('all')}
           className='active'
         >전체</button>
         <button
