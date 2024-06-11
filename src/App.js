@@ -295,7 +295,7 @@ function App() {
           className='active'
         >전체</button>
         <button
-          onClick={() => clickYearBtn('2020년')}
+          onClic={() => clickYearBtn('2020년')}
           className='active'
         >2020년</button>
         <button
